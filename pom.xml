@@ -12,6 +12,7 @@
 	 * 핵심 : maven이 war라는 패키지 파일을 만들어줌, 이 war파일을 tomcat에 배포 = tomcat이 알아서 압축 해제해서 서비스 작동-->
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 
+	<!--commit test 용-->
 	<properties>
 		<java-version>11</java-version>
 		<org.springframework-version>5.0.7.RELEASE</org.springframework-version>
