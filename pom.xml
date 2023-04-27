@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--project 정보-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.fastcampus</groupId>
-	<artifactId>ch2</artifactId>
-	<name>ch2</name>
+	<artifactId>ch2</artifactId> <!--내가 만든 프로그램-->
+	<name>ch2</name> <!--project 이름-->
 	<packaging>war</packaging>
+	<!-- java program있으면 tomcat에 배포=설치, -packaging 2가지 방식 : jar(java아카이브) war(웹 아카이브) -->
+	<!-- 패키징을 하는 이유 : 여러파일(img,css,java,설정파일) 하나로 묶어서 줘야함
+	 * 핵심 : maven이 war라는 패키지 파일을 만들어줌, 이 war파일을 tomcat에 배포 = tomcat이 알아서 압축 해제해서 서비스 작동-->
 	<version>1.0.0-BUILD-SNAPSHOT</version>
+
 	<properties>
-		<java-version>1.6</java-version>
-		<org.springframework-version>3.1.1.RELEASE</org.springframework-version>
+		<java-version>11</java-version>
+		<org.springframework-version>5.0.7.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
+<!--dependencies -dependency - 모듈, 라이브러리 내용 추가 -->
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api -->
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.1.Final</version>
+		</dependency>
+
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -117,6 +130,7 @@
 			<scope>test</scope>
 		</dependency>        
 	</dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -138,8 +152,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.5.1</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
                     <compilerArgument>-Xlint:all</compilerArgument>
                     <showWarnings>true</showWarnings>
                     <showDeprecation>true</showDeprecation>
