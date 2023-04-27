@@ -12,7 +12,6 @@
 	 * 핵심 : maven이 war라는 패키지 파일을 만들어줌, 이 war파일을 tomcat에 배포 = tomcat이 알아서 압축 해제해서 서비스 작동-->
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 
-	<!--commit test 용-->
 	<properties>
 		<java-version>11</java-version>
 		<org.springframework-version>5.0.7.RELEASE</org.springframework-version>
@@ -105,18 +104,22 @@
 		</dependency>
 				
 		<!-- Servlet -->
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.1</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.3</version>
 			<scope>provided</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
