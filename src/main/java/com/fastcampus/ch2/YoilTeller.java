@@ -11,9 +11,9 @@ import java.util.Calendar;
 
 @Controller
 public class YoilTeller {
-    @RequestMapping("/getYoil")
+    @RequestMapping("/getYoils")
     public void main(int year, int month, int day,
-            HttpServletRequest request, HttpServletResponse response) throws IOException {
+                     HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 1. 입력 - main메서드 매개변수 -> String year, String month, String day 적으면 안 적어줘도 됨.
         // 입력은 request.getParemeter로 단순하기 때문에 간략하게 생략 가능
 //        String year = request.getParameter("year");
