@@ -15,5 +15,6 @@ public class test {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 E요일");
         sdf.format(today);
         System.out.println(sdf.format(today));
+        // 커밋 테스트용 5.1
     }
 }
