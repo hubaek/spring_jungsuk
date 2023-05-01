@@ -33,7 +33,7 @@ public class FortuneTeller {
         Date today = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 E요일");
         sdf.format(today);
-줌
+
         // 3. model에 저장
         model.addAttribute("name",name);
         model.addAttribute("gender",gender);
