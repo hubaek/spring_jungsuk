@@ -11,8 +11,7 @@ import java.io.IOException;
 @Controller
 public class HelloServletMVC {
     @RequestMapping("/rolldice")
-    public String Dice(HttpServletRequest request, HttpServletResponse response,
-                       Model model) throws IOException {
+    public String Dice(Model model) throws IOException {
         // 2. 처리
         int num1 = (int)(Math.random()*6)+1;
         int num2 = (int)(Math.random()*6)+1;
