@@ -30,16 +30,32 @@ public class LoginServlet3 extends HttpServlet {
         String rememberId = request.getParameter("rememberId");
         System.out.println("checkbox 값 확인 :  " +rememberId);
         // 2. 처리
-        if (rememberId != null) {  // id기억하기 버튼 클릭하면 쿠키생성
-            Cookie cookie = new Cookie("id","asdf"); // 쿠키생성
-            cookie.setMaxAge(60*60*24); // 유효기간 설정(초)
-            response.addCookie(cookie); // 응답에 쿠키 추가
-            System.out.println("쿠키 생성여부 " + cookie);
-        } else if (rememberId == null) {
-            Cookie cookie = new Cookie("id", "asdf");   // 쿠키삭제과정
-            cookie.setMaxAge(0);
-            response.addCookie(cookie);
-            System.out.println("쿠키삭제.");
+
+        // 비밀번호가 안 맞을 시에 redirect
+        // 맞을 시에
+        // 1. rememberID 체크 되어있을때 - 쿠키생성
+        // 2. rememberID 체크 안되어있을때. - 쿠키가 있으면 쿠키삭제
+        if (id.equals("asdf") && pwd.equals("1234")) {
+            if (rememberId != null) {  // id기억하기 버튼 클릭하면 쿠키생성
+                Cookie cookie = new Cookie("id", "asdf"); // 쿠키생성
+                cookie.setMaxAge(60 * 60 * 24); // 유효기간 설정(초)
+                response.addCookie(cookie); // 응답에 쿠키 추가
+                System.out.println("쿠키 생성여부 " + cookie);
+            } else if (rememberId == null) {
+                Cookie[] cookies = request.getCookies();
+                for (Cookie cookie : cookies) {
+                    System.out.println("cookie id : "+id);
+
+                    if (id.equals("asdf")) {
+                        Cookie cookie1 = new Cookie("id", "asdf");   // 쿠키삭제과정
+                        cookie1.setMaxAge(0);
+                        response.addCookie(cookie1);
+                        System.out.println("쿠키삭제.");
+                    }
+                }
+            }
+        } else {
+            response.sendRedirect("/login3");
         }
 //        System.out.println("request넘어오는지 확인" + id + pwd);
 
