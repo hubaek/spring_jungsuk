@@ -30,16 +30,9 @@
 <html>
 <head>
     <title>Board</title>
-    <link rel="stylesheet" type="text/css" href="/index.css">
 </head>
 <body>
-<%-- 공통 내비게이션 --%>
-<%--<div class="topnav">--%>
-<%--    <a class="active" href="index.jsp">Home</a>--%>
-<%--    <a href="board.jsp">Board</a>--%>
-<%--    &lt;%&ndash;    <a href="#contact">Contact</a>&ndash;%&gt;--%>
-<%--    <a href="login.jsp" id="login">Login</a>--%>
-<%--</div>--%>
+<%--top내비게이션 메뉴 공통 부분--%>
 <jsp:include page="topNav.jsp" flush="false"/>
 
 <div style="padding-left:16px">

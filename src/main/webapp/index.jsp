@@ -14,22 +14,7 @@
 
 </head>
 <body>
-<%--네비게이션 HOME , BOARD , LOGIN 버튼을 만든다.
-Home - index.jsp
-Board - board.jsp
-Login - login.jsp 경로 지정
---%>
-<%-- 공통 내비게이션
-<div class="topnav">
-    <a class="active" href="index.jsp">Home</a>
-    <a href="board.jsp">Board</a>
-    <a href="#contact">Contact</a>
-    <form action="login4" method="post">
-        <input type="submit" value="Login">
-    </form>
-    <a href="login.jsp" id="login">Login</a>
-</div>
---%>
+<%--top내비게이션 메뉴 공통 부분--%>
 <jsp:include page="topNav.jsp" flush="false"/>
 
 <div style="padding-left:16px">
