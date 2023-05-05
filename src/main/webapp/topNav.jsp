@@ -7,6 +7,16 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+    String loginYN = "Login";
+    String url = "/login.jsp";
+    String sessionId = (String) session.getAttribute("id");
+    // sessionId가 존재하면 Login -> Logout으로 변경.
+    if (sessionId != null){
+        loginYN = "Logout";
+        url = "/logout";
+    }
+%>
 <html>
 <head>
     <title>TopNav</title>
@@ -23,10 +33,7 @@ Login - login.jsp 경로 지정
 <div class="topnav">
   <a class="active" href="index.jsp">Home</a>
   <a href="board.jsp">Board</a>
-  <form action="login4" method="post" id="login">
-    <input type="submit" value="Login" class="login">
-  </form>
-<%--  <a href="login.jsp" id="login">Login</a>--%>
+  <a href="<%=url%>" id="asd"><%=loginYN%></a>
 </div>
 </body>
 </html>
