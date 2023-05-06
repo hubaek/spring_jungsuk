@@ -8,8 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
-//    String referer = request.getHeader("referer"); // login.jsp에선 referer확인 어려움
-//    System.out.println("login.jsp에서 referer 확인 : "+referer);
+    String referer = request.getHeader("referer");
+    System.out.println("login.jsp에서 referer 확인 : "+referer);
+    // index에서 로그인을 누르면 http://loaclhost:8080/인데
+
+
+    String cookieID = "";
+    // 쿠키를 읽어온다.
+
+
 %>
 <html>
 <head>
@@ -24,16 +31,19 @@
 <%--로그인 폼. ID 기억하기(쿠키?)--%>
 <form action="/login4" method="post">
     <label for="id">ID : </label>
-    <input type="text" id="id" name="id" value=""><br><br>
+    <input type="text" id="id" name="id" value="<%=cookieID%>"><br><br>
 <%--<%=cookieId%>--%>
     <label for="pwd">password : </label>
     <input type="password" id="pwd" name="pwd"><br><br>
 
-    <input type="checkbox" id="rememberId" name="rememberId" }>
+    <input type="checkbox" id="rememberId" name="rememberId" ${cookie.id.value != null ? "checked":" "}>
 <%--${cookie.id.value != null ? "checked":" "--%>
     <label for="rememberId">ID 기억하기</label><br>
 
     <input type="submit" value="로그인"><br>
+    <form>
+        <input type = "hidden" name="before" value= "/board.jsp" >
+    </form>
 </form>
 </div>
 
