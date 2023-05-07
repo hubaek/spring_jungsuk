@@ -10,20 +10,15 @@
 <%
     String referer = request.getHeader("referer");
     System.out.println("board.jsp에서 referer 확인 : "+referer);
-    // 로그인 여부 확인하기
-    // 로그인이 되어있으면
-    // board.jsp 지금 내용 보여줌
-    // 로그인이 안 되어있으면
-    // login.jsp로 redirect
+    // 로그인 여부 확인하기(세션)
     // ==> 로그인이 안되어 있으면 redirect(login.jsp)만 조건 걸면
     // 로그인 되어 있으면 자동으로 board.jsp를 보여주게 된다. 굳이 로그인 되어있으면 조건문 고민 x
-    String id = request.getParameter("id");
+//    String id = request.getParameter("id");
     // session은 기본 구현. LoginServlet에서 get했으므로 jsp 공통 접근
     String sessionId = (String) session.getAttribute("id");
     System.out.println("sessionID 확인 : "+sessionId);
     // 로그인이 안되어있으면
     if (sessionId == null) {
-
 //        response.sendRedirect("/login.jsp");  // redirect이면 요청을 끊고 다시 index에서 login.jsp로 요청보내는 것
         RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
         dispatcher.forward(request, response);
