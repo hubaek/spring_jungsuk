@@ -19,8 +19,8 @@
     System.out.println("sessionID 확인 : "+sessionId);
     // 로그인이 안되어있으면
     if (sessionId == null) {
-//        response.sendRedirect("/login.jsp");  // redirect이면 요청을 끊고 다시 index에서 login.jsp로 요청보내는 것
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
+//        response.sendRedirect("/login4");  // redirect이면 요청을 끊고 다시 index에서 login.jsp로 요청보내는 것
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/login4");
         dispatcher.forward(request, response);
     }
 %>

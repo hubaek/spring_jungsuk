@@ -8,10 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
+//    String referindex = request.getHeader("referer");
     String referer = request.getHeader("referer");
+    String toURL = request.getParameter("toURL");
     System.out.println("login.jsp에서 referer 확인 : "+referer);
     // index에서 로그인을 누르면 http://loaclhost:8080/인데
-
+//    System.out.println("toURL 확인 : " + toURL);
 
     String cookieID = "";
     // 쿠키를 읽어온다.
@@ -41,9 +43,9 @@
     <label for="rememberId">ID 기억하기</label><br>
 
     <input type="submit" value="로그인"><br>
-    <form>
-        <input type = "hidden" name="before" value= "/board.jsp" >
-    </form>
+<%--        <input type = "hidden" name="before" value= "${param.toURL}" >--%>
+        <input type = "text" name="before" value= "<%=toURL%>">
+<%--        <input type = "text" name="before" value= "<%=referindex%>">--%>
 </form>
 </div>
 

@@ -30,6 +30,7 @@ Board - board.jsp
 Login - login.jsp 경로 지정
 --%>
 <%-- 공통 내비게이션 --%>
+<%--href - controller--%>
 <div class="topnav">
   <a class="active" href="index.jsp">Home</a>
   <a href="board.jsp">Board</a>
