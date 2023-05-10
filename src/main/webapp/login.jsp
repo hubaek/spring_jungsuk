@@ -8,11 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
-//    String referindex = request.getHeader("referer");
+
     String referer = request.getHeader("referer");
     String toURL = request.getParameter("toURL");
     System.out.println("login.jsp에서 referer 확인 : "+referer);
-    // index에서 로그인을 누르면 http://loaclhost:8080/인데
+    System.out.println("login.jsp에서 toURL 확인 : "+toURL);
+    // index에서 로그인을 눌러서 로그인하면 Index로 와야하는데 login.jsp로 감 - controller referer가 login.jsp로
+    // index에서 board눌러서 로그인해도 login.jsp로 감.
 //    System.out.println("toURL 확인 : " + toURL);
 
     String cookieID = "";
