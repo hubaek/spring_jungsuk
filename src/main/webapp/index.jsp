@@ -18,6 +18,7 @@
 <jsp:include page="topNav.jsp" flush="false"/>
 
 <div style="padding-left:16px">
+    <h1> Index.jsp 입니다~~ </h1>
     <h2> 게시판 홈 </h2>
     <p>홈, 게시판, 로그인 구현하기</p>
 </div>
